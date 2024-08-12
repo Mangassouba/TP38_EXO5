@@ -12,7 +12,7 @@
         @blur="valReference"
         placeholder="reference"
       />
-      <span v-if="error.reference">{{ error.reference }}</span>
+      <span v-if="error.reference" class="text-danger">{{ error.reference }}</span>
     </div>
     <div class="mb-3">
       <label for="designation" class="form-label">Désignation</label>
@@ -23,7 +23,7 @@
         @blur="valDesignation"
         placeholder="Désignation"
       />
-      <span v-if="error.designation">{{ error.designation }}</span>
+      <span v-if="error.designation" class="text-danger">{{ error.designation }}</span>
     </div>
     <div class="mb-3">
       <label for="quantite" class="form-label">Quantité</label>
@@ -35,7 +35,7 @@
         @blur="valQuantite"
         placeholder="Quantite"
       />
-      <span v-if="error.quantite">{{ error.quantite }}</span>
+      <span v-if="error.quantite" class="text-danger">{{ error.quantite }}</span>
     </div>
     <div class="mb-3">
       <label for="prix" class="form-label">Prix</label>
@@ -47,7 +47,7 @@
         @blur="valPrix"
         placeholder="Prix de vente"
       />
-      <span v-if="error.prix">{{ error.prix }}</span>
+      <span v-if="error.prix" class="text-danger">{{ error.prix }}</span>
     </div>
     <div class="mb-3">
       <button class="btn btn-primary" type="submit">Enregistrer</button>
@@ -103,7 +103,7 @@ function validation(){
     valDesignation()
     valQuantite()
     valPrix()
-    if(reference.value,designation.value,quantite.value,prix.value){
+    if(reference.value && designation.value && quantite.value && prix.value){
       ventes.value.push({
         reference : reference.value,
         designation : designation.value,
